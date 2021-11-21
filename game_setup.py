@@ -31,17 +31,25 @@ def up(board):
             old = board[row][col]
         #print(old)
             new = board[row-1][col]
-            print(new)
             alter = board[row+1][col]
     #for i in COLS:
-        if new == alter:
-            merge = new + alter
-            new = merge
-            alter = 0
-        else:
-            continue
-    #print("Board: ", board)
-    print("New Board: ",new)
+        # moving
+            if old == ' ':
+                board[row][col] = new
+
+        #merging
+    for row in range(ROWS-1):
+        for col in range(COLS-1):
+            if new == old:
+                merge = new + old
+                board[row-1][col] = merge
+                board[row][col] = 0
+            else:
+                continue
+    print("Board:")
+    for line in board:
+        print(line)
+    # print("New Board: ",board)
 
 def down(board):
     """build by Bishop"""
@@ -117,16 +125,16 @@ def spawn(board):
     #row1 = int(tokens1[0])
     #col1 = int(tokens1[1])
     random_number = random.randint(1,100)
-    print('Happy')
+    #print('Happy')
     if board[row][col] == ' ': #and board[row1][col1] == '':
         board[row][col] = two_or_four(random_number)
-        print("happy")
+        #print("happy")
         #board[row1][col1] = two_or_four(random_number)
     if row > 5 or col > 5: #or row1 > 5 or col1 > 5:
         print("out of range")
         no_move = False
     merge(board)
-    print(board)
+    # print(board)
     return spawn(board)
     
     #print_board(board)
@@ -151,7 +159,7 @@ def main():
     """build by Bishop"""
     print("Welcome to our wonderful game!!!")
     board = make_board()
-    print_board(board)
+    # print_board(board)
     spawn(board)
 
 if __name__ == '__main__':
