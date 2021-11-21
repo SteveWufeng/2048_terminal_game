@@ -118,7 +118,7 @@ def spawn(board):
     #col1 = int(tokens1[1])
     random_number = random.randint(1,100)
     print('Happy')
-    if board[row][col] == '': #and board[row1][col1] == '':
+    if board[row][col] == ' ': #and board[row1][col1] == '':
         board[row][col] = two_or_four(random_number)
         print("happy")
         #board[row1][col1] = two_or_four(random_number)
