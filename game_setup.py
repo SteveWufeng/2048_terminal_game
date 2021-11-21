@@ -36,7 +36,7 @@ def up(board):
             alter = 0
         else:
             continue
-    print("Old board: ", old)
+    print("Old Board: ", old)
     print("New Board: ", new)
 
 def down(board):
