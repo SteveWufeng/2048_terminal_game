@@ -28,7 +28,7 @@ def up(board):
         #print(old)
             new = board[row-1][col]
             print(new)
-            alter = board[row-1]+1[col]
+            alter = board[row+1][col]
     #for i in COLS:
         if new == alter:
             merge = new + alter

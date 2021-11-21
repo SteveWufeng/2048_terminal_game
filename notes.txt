@@ -1,0 +1,59 @@
+def get_score(score, moves):
+    score = 0
+    for i in range(moves):
+        table()\
+
+def table():
+    print("Hello World!")
+
+
+            #if board[row][col] == '':
+                #board[row][col] = symbol
+
+def make_move(board):
+    no_move = True
+    while no_move:
+        try:
+            spawn(board)
+            spawn(board)
+            if row > 5 or row1 > 5 or col > 5 or col1 > 5:
+                print("out of range")
+                no_move = False
+            if board[row][col] != '' or board[row1][col1] != '':
+                addition = board[row][col] + board[row1][col1]
+            else:
+                print('Invalid move. Please try again')
+        except:
+            print("invalid move. Please try again.")
+    print_board(board)
+    
+
+def down(board):
+    for row in ROWS:
+        for col in COLS:
+            old = board[row][col]
+            new = board[row+1][col]
+    print("Old board: ", old)
+    print("New Board: ", new)
+def left(board):
+    for row in ROWS:
+        for col in COLS:
+            old = board[row][col]
+            new = board[row][col-1]
+    print("Old board: ", old)
+    print("New Board: ", new)
+
+def right(board):
+    for row in ROWS:
+        for col in COLS:
+            old = board[row][col]
+            new = board[row][col+1]
+    print("Old board: ", old)
+    print("New Board: ", new)
+
+
+    #if board[row][col] != '': #or board[row1][col1] != '':
+        #addition = board[row][col] #+ board[row1][col1]
+        #board[row1][col1] = int(addition)
+    #else:
+    move == 'w'or move == 'W'
