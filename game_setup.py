@@ -26,8 +26,8 @@ def up(board):
     """build by Bishop"""
     #for row in ROWS:
         #for col in COLS:
-    for row in range(ROWS):
-        for col in range(COLS):
+    for row in range(ROWS-1):
+        for col in range(COLS-1):
             old = board[row][col]
         #print(old)
             new = board[row-1][col]
@@ -40,17 +40,18 @@ def up(board):
             alter = 0
         else:
             continue
-    print("Old Board: ", old)
-    print("New Board: ", new)
+    #print("Board: ", board)
+    print("New Board: ",new)
 
 def down(board):
     """build by Bishop"""
-    for row,col in board:
-        old = board[row][col]
+    for row in range(ROWS-1):
+        for col in range(COLS-1):
+            old = board[row][col]
         #print(old)
-        new = board[row+1][col]
-        print(new)
-        alter = board[row-1][col]
+            new = board[row+1][col]
+            print(new)
+            alter = board[row-1][col]
     #for i in COLS:
         if new == alter:
             merge = new + alter
@@ -58,17 +59,18 @@ def down(board):
             alter = 0
         else:
             continue
-    print("Old board: ", old)
+    print("Old Board: ", old)
     print("New Board: ", new)
 
 def left(board):
     """build by Bishop"""
-    for row,col in board:
-        old = board[row][col]
+    for row in range(ROWS-1):
+        for col in range(COLS-1):
+            old = board[row][col]
         #print(old)
-        new = board[row][col-1]
-        print(new)
-        alter = board[row][col+1]
+            new = board[row][col-1]
+            print(new)
+            alter = board[row][col+1]
     #for i in COLS:
         if new == alter:
             merge = new + alter
@@ -76,25 +78,26 @@ def left(board):
             alter = 0
         else:
             continue
-    print("Old board: ", old)
+    print("Old Board: ", old)
     print("New Board: ", new)
 
 def right(board):
     """build by Bishop"""
-    for row,col in board:
-        old = board[row][col]
+    for row in range(ROWS-1):
+        for col in range(COLS-1):
+            old = board[row][col]
         #print(old)
-        new = board[row][col+1]
-        print(new)
+            new = board[row][col+1]
+            print(new)
+            alter = board[row][col-1]
     #for i in COLS:
-        alter = board[row][col-1]
         if new == alter:
             merge = new + alter
             new = merge
             alter = 0
         else:
             continue
-    print("Old board: ", old)
+    print("Old Board: ", old)
     print("New Board: ", new)
     
 def spawn(board):
@@ -114,15 +117,17 @@ def spawn(board):
     #row1 = int(tokens1[0])
     #col1 = int(tokens1[1])
     random_number = random.randint(1,100)
+    print('Happy')
     if board[row][col] == '': #and board[row1][col1] == '':
         board[row][col] = two_or_four(random_number)
+        print("happy")
         #board[row1][col1] = two_or_four(random_number)
     if row > 5 or col > 5: #or row1 > 5 or col1 > 5:
         print("out of range")
         no_move = False
     merge(board)
     print(board)
-    return spawn(random_number, board)
+    return spawn(board)
     
     #print_board(board)
 def merge(board):
@@ -136,7 +141,8 @@ def merge(board):
         down(board)
     if move == 'd'or move == 'D':
         right(board)
-
+    else:
+        return "Try again"
 
 
 
