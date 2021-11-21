@@ -3,9 +3,9 @@ ROWS = 5
 COLS = 5
 
 def make_board():
-    x = [['' for _ in range(5)] for _ in range(5)]
-    print(x)
-    return [['' for _ in range(5)] for _ in range(5)]
+    x = [[' ' for _ in range(5)] for _ in range(5)]
+    # print(x)
+    return x
 
 def print_board(board):
     print(board[0][0], "|", board[0][1], "|", board[0][2],"|", board[0][3], "|", board[0][4], sep = '')
@@ -127,9 +127,15 @@ def merge(board):
     if move == 'd'or move == 'D':
         right(board)
 
+
+
+
+"""MUST BE IN main()  and if name == main structure"""
 def main():
     print("Welcome to our wonderful game!!!")
-    board = make_board
+    board = make_board()
     print_board(board)
     spawn(board)
-main()
+
+if __name__ == '__main__':
+    main()
