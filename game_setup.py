@@ -22,12 +22,13 @@ def two_or_four(num):
 def up(board):
     #for row in ROWS:
         #for col in COLS:
-    for row,col in board:
-        old = board[row][col]
+    for row in range(ROWS):
+        for col in range(COLS):
+            old = board[row][col]
         #print(old)
-        new = board[row-1][col]
-        print(new)
-        alter = board[row+1][col]
+            new = board[row-1][col]
+            print(new)
+            alter = board[row-1]+1[col]
     #for i in COLS:
         if new == alter:
             merge = new + alter
@@ -92,8 +93,8 @@ def right(board):
 def spawn(board):
     #table[ROWS][COLS]
     #move = input('Enter move (row column [range of 1-5]): ')
-    row = random.randint(0,5)
-    col = random.randint(0,5)
+    row = random.randint(0,4)
+    col = random.randint(0,4)
     #move = row,col
     #tokens = move.split()
     #move1 = input('Enter  another move (row column [range of 1-5]): ')
