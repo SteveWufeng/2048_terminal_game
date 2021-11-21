@@ -40,21 +40,24 @@ def make_move(board, symbol):
 def table():
     print("Hello World!")
     
-def spawn(random_number, moves):
+def two_or_four(num):
+    if num <= 70:
+        return 2
+    else:
+        return 4
+
+def spawn(random_number,board, moves):
     #table[ROWS][COLS]
     count = 0
     for x in moves:
-        if board[row][col] == '':
         random_number = random.randint(1,100)
+        if board[ROWS][COLS] == '':
+            board[ROWS][COLS] = two_or_four(random_number)
+        else:
+            spawn()
         if count == x:
             print("Game over!")
             break
-        elif random_number <= 70:
-            count +=1
-            return 2
-        else:
-            count +=1
-            return 4
 def get_score(score, moves):
     score = 0
     for i in range(moves):
