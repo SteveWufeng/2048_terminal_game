@@ -3,11 +3,12 @@ ROWS = 5
 COLS = 5
 
 def make_board():
+    """build by Bishop"""
     x = [[' ' for _ in range(5)] for _ in range(5)]
-    # print(x)
     return x
 
 def print_board(board):
+    """build by Bishop"""
     print(board[0][0], "|", board[0][1], "|", board[0][2],"|", board[0][3], "|", board[0][4], sep = '')
     print(board[1][0], "|", board[1][1], "|", board[1][2], "|", board[1][3], "|",board[1][4], sep = '')
     print(board[2][0], "|", board[2][1], "|", board[2][2], "|", board[2][3], "|",board[2][4], sep = '')
@@ -15,11 +16,14 @@ def print_board(board):
     print(board[4][0], "|", board[4][1], "|", board[4][2], "|", board[4][3], "|",board[4][4], sep = '')
 
 def two_or_four(num):
+    """build by Bishop"""
     if num <= 70:
         return 2
     else:
         return 4
+
 def up(board):
+    """build by Bishop"""
     #for row in ROWS:
         #for col in COLS:
     for row in range(ROWS):
@@ -40,6 +44,7 @@ def up(board):
     print("New Board: ", new)
 
 def down(board):
+    """build by Bishop"""
     for row,col in board:
         old = board[row][col]
         #print(old)
@@ -57,6 +62,7 @@ def down(board):
     print("New Board: ", new)
 
 def left(board):
+    """build by Bishop"""
     for row,col in board:
         old = board[row][col]
         #print(old)
@@ -74,6 +80,7 @@ def left(board):
     print("New Board: ", new)
 
 def right(board):
+    """build by Bishop"""
     for row,col in board:
         old = board[row][col]
         #print(old)
@@ -91,6 +98,7 @@ def right(board):
     print("New Board: ", new)
     
 def spawn(board):
+    """build by Bishop"""
     #table[ROWS][COLS]
     #move = input('Enter move (row column [range of 1-5]): ')
     row = random.randint(0,4)
@@ -118,6 +126,7 @@ def spawn(board):
     
     #print_board(board)
 def merge(board):
+    """build by Bishop"""
     move = input("Enter a command: ")
     if move == 'w'or move == 'W':
         up(board)
@@ -133,6 +142,7 @@ def merge(board):
 
 """MUST BE IN main()  and if name == main structure"""
 def main():
+    """build by Bishop"""
     print("Welcome to our wonderful game!!!")
     board = make_board()
     print_board(board)
